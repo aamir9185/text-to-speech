@@ -1,82 +1,66 @@
-# Text to Speech Sound Generation with Next.js
+# Text-to-Speech App
 
-Welcome to the **Text to Speech Sound Generation** project built using Next.js! This project demonstrates the generation of sound using pre-trained hugging face models. Users can select different hugging face sound models and input text to generate corresponding audio. The generated audio can be played back directly on the web interface.
+A simple and efficient Text-to-Speech (TTS) web application built using **Next.js**. This app allows users to convert text into speech using various AI models hosted on Hugging Face.
 
-## Overview
+## Features
 
-This project showcases how to leverage pre-trained hugging face models along with the Hugging Face inference API to convert input text into synthesized speech. The user interface provides a selection of sound models to choose from and an input field to enter the desired text. Once submitted, the application fetches the generated audio from the model's API and presents it in an audio player.
+- Select from multiple TTS models
+- Convert text to high-quality speech
+- Seamless integration with Hugging Face API
 
+## Tech Stack
 
-## Architecture 
-![image](https://tyhgectxutilszaayoua.supabase.co/storage/v1/object/public/misc/text-to-speech-model.png?t=2023-08-14T02%3A52%3A52.637Z)
+- **Frontend & Backend:** Next.js
+- **UI Components:** shadcn/ui, Tailwind CSS
+- **API Integration:** Hugging Face Inference API
 
-
-
-## Notes
-This application relies heavily on the stability of the Hugging Face Inference API models. Please note that occasional random errors may occur.
-
-## How to Run the Project
-
-### Prerequisites
-
-- Node.js 
-- npm 
-
-### Installation
+## Installation
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/sambowenhughes/your-nextjs-project.git
+   git clone https://github.com/your-username/text-to-speech-app.git
+   cd text-to-speech-app
    ```
-2. Navigate to the project directory:
-   ```sh
-   cd your-nextjs-project
-   ```
-3. Install dependencies:
+2. Install dependencies:
    ```sh
    npm install
    ```
-4. Hugging Face Access Token added to your `.env.local` file:
-   ```sh
-   Hugging face tokens can be created in the hugging face settings portal
-   ```
-
-### Running the Application
-
-1. Start the development server:
+3. Set up environment variables:
+   - Create a `.env.local` file in the root directory
+   - Add the following:
+     ```sh
+     HUGGING_FACE_TOKEN=your_huggingface_api_token
+     ```
+4. Run the development server:
    ```sh
    npm run dev
    ```
-2. Open your browser and visit `http://localhost:3000` to access the application.
-
-## Project Structure
-
-- `components`: Contains reusable UI components used across the application.
-- `lib`: Contains constants and utility functions.
-- `pages`: Houses the main views and API routes of the application.
-- `public`: Holds static assets like images, fonts, etc.
-- `styles`: Includes global and component-specific styles using CSS or CSS-in-JS.
-- `views`: Houses the main application views and components.
 
 ## Usage
 
-1. Open the application in your browser after running it.
-2. In the "Sound Model" dropdown, select a model for generating sound.
-3. Enter the desired text in the "Text" input field.
-4. Click the "Submit" button.
-5. The generated audio will appear in an audio player below.
+1. Open the app in your browser.
+2. Select a sound model from the dropdown.
+3. Enter text in the input field.
+4. Click submit to generate speech.
+5. Download the generated audio.
 
-## Contributing
+## API Endpoint
 
-Contributions are welcome! To contribute, follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Implement your changes and test them thoroughly.
-4. Commit your changes and push to your forked repository.
-5. Open a pull request to the main repository.
+- **POST /api/generate-audio**
+  - **Request Body:**
+    ```json
+    {
+      "modelUrl": "https://api-inference.huggingface.co/models/example-model",
+      "input": "Hello, world!"
+    }
+    ```
+  - **Response:** Audio file in `audio/mpeg` format
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-```
+This project is free to use without restrictions.
+
+---
+
+Feel free to contribute and enhance the app! 🚀
+
